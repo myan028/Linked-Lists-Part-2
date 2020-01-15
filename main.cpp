@@ -150,8 +150,8 @@ void print(Node* next){ //print function
 }
 
 void average(Node* current){ //average function
-	int amountStudent;
-	float gpaSum;
+	int amountStudent = 0;
+	float gpaSum = 0;
 	
 	//     recursion //no
 	//float aveVal;
@@ -167,9 +167,21 @@ void average(Node* current){ //average function
 	
 	//aveVal = gpaSum / amountStudent;
 	
-	amountStudent++;
-		gpaSum = ((current->getStudent())->getGpa()) + gpaSum;
+	
+	//amountStudent++;
+	
+	if(current == head){
+		gpaSum += (current->getStudent())->getGpa();
+		amountStudent++;
+	}
+	
+	while(current->getNext() != NULL){
+		gpaSum += head->getNext()->getStudent()->getGpa();
+		amountStudent++;
 		current = current->getNext();
+	}
+	
+	
 	
 	cout << "\nAverage GPA: " << gpaSum / amountStudent << endl << endl;
 	//cout << "Average GPA: " << aveVal << endl;
