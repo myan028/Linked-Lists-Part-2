@@ -31,8 +31,8 @@ void add(Node* previous, char* firstName, char* lastName, int id, float gpa){ //
 		head = new Node();
 		head->setStudent(newStudent);
 	}
-	else if(newStudent->getId() < head->getStudent()->getId()){ //sorting: add new student as head and shift list over
-		Node* temp = new Node(); //temporary node
+	else if(newStudent->getId() < head->getStudent()->getId()){ //sorting: add new student to front of list
+		Node* temp = new Node(); //temporary node to store old head
 		//temp = head->getStudent();
 		temp->setStudent(head->getStudent());
 		temp->setNext(head->getNext());
